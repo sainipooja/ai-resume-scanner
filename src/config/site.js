@@ -5,7 +5,7 @@
  * In development, the QR code automatically uses your local server URL
  * so phone scanning works on the same WiFi network.
  */
-const PRODUCTION_URL = 'https://ai-resume-scanner.vercel.app'
+const PRODUCTION_URL = 'https://ai-resume-scanner-delta.vercel.app'
 
 function getSiteUrl() {
   if (import.meta.env.DEV && typeof window !== 'undefined') {
