@@ -52,14 +52,14 @@ export default function CandidateCard({ candidate, index }) {
           </div>
         </div>
 
-        <div className="mb-4 grid grid-cols-2 gap-2 text-xs">
+        <div className="mb-4 space-y-2 text-xs">
           <div className="rounded-xl bg-[#FFF8EE]/80 p-2.5">
             <span className="text-[#6D4C41]/50">Department</span>
-            <p className="font-medium text-[#4E342E]">{candidate.department.split(' ')[0]}…</p>
+            <p className="font-medium leading-snug text-[#4E342E]">{candidate.department}</p>
           </div>
           <div className="rounded-xl bg-[#FFF8EE]/80 p-2.5">
             <span className="text-[#6D4C41]/50">Graduation</span>
-            <p className="font-medium text-[#4E342E]">{candidate.graduationYear}</p>
+            <p className="font-medium text-[#4E342E]">Class of {candidate.graduationYear}</p>
           </div>
         </div>
 
@@ -76,17 +76,17 @@ export default function CandidateCard({ candidate, index }) {
         <div className="flex gap-3">
           <Link
             to={`/candidate/${candidate.id}`}
-            className="btn-chocolate flex flex-1 items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold tracking-wider uppercase"
+            className="btn-chocolate flex flex-1 items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold"
           >
             <HiOutlineEye className="h-4 w-4" />
-            Open Resume
+            View Profile
           </Link>
           <button
             onClick={handleDownload}
-            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#4E342E]/15 bg-[#FFF8EE] py-2.5 text-xs font-bold tracking-wider text-[#4E342E] uppercase transition-colors hover:bg-[#F3E5D0]"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#4E342E]/15 bg-[#FFF8EE] py-2.5 text-xs font-semibold text-[#4E342E] transition-colors hover:bg-[#F3E5D0]"
           >
             <HiOutlineDownload className="h-4 w-4" />
-            Download
+            Download CV
           </button>
         </div>
       </div>

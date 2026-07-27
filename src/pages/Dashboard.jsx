@@ -1,19 +1,10 @@
 import { motion } from 'framer-motion'
-import { HiOutlineRefresh } from 'react-icons/hi'
-import { useNavigate } from 'react-router-dom'
 import { candidates } from '../data/candidates'
 import CandidateCard from '../components/CandidateCard'
 import ParticleBackground from '../components/ParticleBackground'
-import { SCAN_KEY } from '../config/site'
+import { SITE } from '../config/site'
 
 export default function Dashboard() {
-  const navigate = useNavigate()
-
-  const rescan = () => {
-    sessionStorage.removeItem(SCAN_KEY)
-    navigate('/', { replace: true })
-  }
-
   return (
     <div className="relative min-h-screen">
       <ParticleBackground />
@@ -29,26 +20,24 @@ export default function Dashboard() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-            className="mb-4 inline-block rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-4 py-1 text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase"
+            className="mb-5 inline-block rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-5 py-1.5 text-xs font-bold tracking-[0.15em] text-[#D4AF37] uppercase"
           >
-            Scan Complete
+            {SITE.dashboard.badge}
           </motion.span>
-          <h1 className="font-display mb-3 text-4xl font-bold text-[#4E342E] sm:text-5xl md:text-6xl">
-            Candidates Detected
+
+          <h1 className="font-display mb-4 text-4xl font-bold text-[#4E342E] sm:text-5xl md:text-6xl">
+            {SITE.dashboard.title}
           </h1>
-          <p className="mx-auto max-w-xl text-[#6D4C41]/70">
-            {candidates.length} engineering profiles matched and ready for review
+
+          <p className="mx-auto mb-3 max-w-2xl text-base leading-relaxed text-[#6D4C41]/80 sm:text-lg">
+            {SITE.dashboard.subtitle}
           </p>
 
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={rescan}
-            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#4E342E]/15 px-5 py-2.5 text-xs font-semibold tracking-wider text-[#6D4C41] uppercase transition-colors hover:bg-[#F3E5D0]"
-          >
-            <HiOutlineRefresh className="h-4 w-4" />
-            New Scan
-          </motion.button>
+          <p className="mx-auto max-w-xl text-sm font-medium tracking-wide text-[#D4AF37]">
+            {SITE.dashboard.footer}
+          </p>
+
+          <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
         </motion.div>
 
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">

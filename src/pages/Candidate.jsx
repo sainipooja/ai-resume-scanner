@@ -56,14 +56,14 @@ export default function Candidate() {
             className="inline-flex items-center gap-2 rounded-xl border border-[#4E342E]/15 bg-[#FFF8EE]/80 px-4 py-2.5 text-sm font-semibold text-[#4E342E] backdrop-blur-sm hover:bg-[#F3E5D0]"
           >
             <HiOutlineArrowLeft className="h-4 w-4" />
-            Back
+            Back to Candidates
           </Link>
           <div className="flex gap-2">
             <motion.button whileTap={{ scale: 0.95 }} onClick={handleDownload} className="btn-chocolate inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">
-              <HiOutlineDownload className="h-4 w-4" /> Download Resume
+              <HiOutlineDownload className="h-4 w-4" /> Download CV
             </motion.button>
             <motion.button whileTap={{ scale: 0.95 }} onClick={() => window.open(candidate.resumeFile, '_blank')} className="inline-flex items-center gap-2 rounded-xl border border-[#4E342E]/15 bg-[#FFF8EE] px-5 py-2.5 text-sm font-semibold text-[#4E342E]">
-              <HiOutlinePrinter className="h-4 w-4" /> Print Resume
+              <HiOutlinePrinter className="h-4 w-4" /> Save as PDF
             </motion.button>
           </div>
         </motion.div>
@@ -80,6 +80,7 @@ export default function Candidate() {
             <div className="mb-10 flex flex-col items-center border-b border-[#D4AF37]/20 pb-10 sm:flex-row sm:items-start sm:gap-8">
               <img src={candidate.image} alt={candidate.name} className="mb-6 h-40 w-40 rounded-2xl border-4 border-[#FFF8EE] object-cover shadow-xl sm:mb-0" />
               <div className="text-center sm:text-left">
+                <p className="mb-2 text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Candidate Profile</p>
                 <h1 className="font-display text-4xl font-bold text-[#4E342E]">{candidate.name}</h1>
                 <p className="mt-1 text-xl font-semibold text-[#D4AF37]">{candidate.role}</p>
                 <p className="mt-2 text-[#6D4C41]/70">{candidate.college} · {candidate.department} · Class of {candidate.graduationYear}</p>
@@ -98,11 +99,11 @@ export default function Candidate() {
               </div>
             </div>
 
-            <Section title="Career Objective" delay={0.1}>
+            <Section title="Professional Summary" delay={0.1}>
               <p className="leading-relaxed text-[#6D4C41]">{candidate.objective}</p>
             </Section>
 
-            <Section title="Education" delay={0.15}>
+            <Section title="Academic Background" delay={0.15}>
               {candidate.education.map((e) => (
                 <div key={e.degree} className="mb-4">
                   <h3 className="font-semibold text-[#4E342E]">{e.degree}</h3>
@@ -111,7 +112,7 @@ export default function Candidate() {
               ))}
             </Section>
 
-            <Section title="Technical Skills" delay={0.2}>
+            <Section title="Core Competencies" delay={0.2}>
               <div className="flex flex-wrap gap-2">
                 {candidate.technicalSkills.map((s) => (
                   <span key={s} className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs font-medium text-[#4E342E]">{s}</span>
@@ -119,7 +120,7 @@ export default function Candidate() {
               </div>
             </Section>
 
-            <Section title="Projects" delay={0.25}>
+            <Section title="Key Projects" delay={0.25}>
               {candidate.projects.map((p) => (
                 <div key={p.name} className="mb-4">
                   <h3 className="font-semibold text-[#4E342E]">{p.name}</h3>
@@ -129,7 +130,7 @@ export default function Candidate() {
               ))}
             </Section>
 
-            <Section title="Internships" delay={0.3}>
+            <Section title="Industry Experience" delay={0.3}>
               {candidate.internships.map((i) => (
                 <div key={i.company} className="mb-4">
                   <div className="flex flex-wrap justify-between gap-2">
@@ -141,7 +142,7 @@ export default function Candidate() {
               ))}
             </Section>
 
-            <Section title="Experience" delay={0.32}>
+            <Section title="Leadership & Activities" delay={0.32}>
               {candidate.experience.map((e) => (
                 <div key={e.company} className="mb-4">
                   <div className="flex flex-wrap justify-between gap-2">
@@ -153,7 +154,7 @@ export default function Candidate() {
               ))}
             </Section>
 
-            <Section title="Certifications" delay={0.35}>
+            <Section title="Professional Certifications" delay={0.35}>
               <ul className="space-y-2">
                 {candidate.certifications.map((c) => (
                   <li key={c} className="flex items-start gap-2 text-sm text-[#6D4C41]">
@@ -163,7 +164,7 @@ export default function Candidate() {
               </ul>
             </Section>
 
-            <Section title="Achievements" delay={0.38}>
+            <Section title="Notable Achievements" delay={0.38}>
               <ul className="space-y-2">
                 {candidate.achievements.map((a) => (
                   <li key={a} className="flex items-start gap-2 text-sm text-[#6D4C41]">
@@ -173,7 +174,7 @@ export default function Candidate() {
               </ul>
             </Section>
 
-            <Section title="Languages" delay={0.4}>
+            <Section title="Language Proficiency" delay={0.4}>
               <div className="flex flex-wrap gap-3">
                 {candidate.languages.map((l) => (
                   <span key={l} className="text-sm text-[#6D4C41]">{l}</span>
