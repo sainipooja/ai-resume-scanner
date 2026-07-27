@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rahul Verma — Python Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Georgia,serif;color:#4E342E;line-height:1.65;max-width:850px;margin:0 auto;padding:40px 32px;background:#FFF8EE}
+.header{text-align:center;border-bottom:3px solid #D4AF37;padding-bottom:24px;margin-bottom:28px}
+.header h1{font-size:30px;color:#4E342E;margin-bottom:4px}
+.header h2{font-size:17px;color:#6D4C41;font-weight:500;margin-bottom:14px}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:12px;color:#6D4C41}
+section{margin-bottom:24px}
+section>h2{font-size:14px;color:#D4AF37;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #F3E5D0;padding-bottom:6px;margin-bottom:14px}
+.summary{font-size:14px;text-align:justify;color:#6D4C41}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:#F3E5D0;color:#4E342E;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.item{margin-bottom:14px}
+.item h3{font-size:14px;color:#4E342E}
+.item p,.item li{font-size:13px;color:#6D4C41}
+.row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.row span{font-size:12px;color:#A1887F}
+.tech{font-size:11px;color:#D4AF37;margin-top:3px}
+.certs li{font-size:13px;list-style:none;padding:3px 0 3px 16px;position:relative;color:#6D4C41}
+.certs li::before{content:"◆";position:absolute;left:0;color:#D4AF37;font-size:8px;top:6px}
+.print-btn{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#4E342E,#6D4C41);color:#FFF8EE;border:none;padding:10px 22px;border-radius:10px;cursor:pointer;font-weight:600;z-index:100}
+@media print{.print-btn{display:none}body{padding:20px}}
+</style></head><body>
+<button class="print-btn" onclick="window.print()">Print as PDF</button>
+<div class="header"><h1>Rahul Verma</h1><h2>Python Developer</h2>
+<div class="contact"><span>rahul.verma@msrit.edu</span><span>•</span><span>+91 65432 10987</span><span>•</span><span>MS Ramaiah Institute of Technology</span></div></div>
+<section><h2>Career Objective</h2><p class="summary">Python developer eager to contribute to backend services, data pipelines, and automation tooling in a product-focused engineering environment.</p></section>
+<section><h2>Education</h2><div class="item"><h3>B.E. Computer Science and Engineering</h3><p>MS Ramaiah Institute of Technology, Bengaluru · 2022 – 2026 · CGPA 8.76 / 10</p></div><div class="item"><h3>Higher Secondary (Science)</h3><p>Kendriya Vidyalaya, Bengaluru · 2020 – 2022 · 93.6%</p></div></section>
+<section><h2>Technical Skills</h2><div class="skills"><span class="tag">Python 3</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">SQLAlchemy</span><span class="tag">PostgreSQL</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">REST APIs</span><span class="tag">Pytest</span><span class="tag">Selenium</span><span class="tag">BeautifulSoup</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Linux CLI</span><span class="tag">Data Structures & Algorithms</span></div></section>
+<section><h2>Projects</h2><div class="item"><h3>AutoReport Generator</h3><p>Django app that ingests CSV sales data, generates PDF reports with charts, and emails summaries to stakeholders on a cron schedule.</p><p class="tech">Django, Pandas, ReportLab, Celery</p></div><div class="item"><h3>WeatherStack API</h3><p>FastAPI microservice aggregating weather data from multiple providers with caching, fallback logic, and OpenAPI documentation.</p><p class="tech">FastAPI, Redis, httpx, Pydantic</p></div><div class="item"><h3>JobScout Scraper</h3><p>Ethical job listing aggregator that normalizes postings from career pages, deduplicates entries, and exposes a searchable REST API.</p><p class="tech">Python, BeautifulSoup, PostgreSQL, Flask</p></div></section>
+<section><h2>Internships</h2><div class="item"><div class="row"><h3>Python Developer Intern — Zoho</h3><span>Jun 2025 – Aug 2025</span></div><p>Built internal automation scripts reducing manual QA setup time by 60%; developed Flask endpoints for test data seeding.</p></div><div class="item"><div class="row"><h3>Software Engineering Intern — Thoughtworks</h3><span>Dec 2024 – Feb 2025</span></div><p>Pair-programmed on a client inventory system, wrote pytest suites, and contributed to CI pipeline improvements.</p></div></section>
+<section><h2>Experience</h2><div class="item"><div class="row"><h3>Python Mentor — MSRIT Coding Club</h3><span>Feb 2024 – Present</span></div><p>Mentors 30+ students through weekly Python labs covering OOP, file I/O, web scraping ethics, and API development.</p></div></section>
+<section><h2>Certifications</h2><ul class="certs"><li>PCAP – Certified Associate in Python Programming</li><li>Google IT Automation with Python</li><li>DataCamp Data Analyst with Python</li></ul></section>
+<section><h2>Achievements</h2><ul class="certs"><li>Winner, MSRIT Hackathon 2024 – Automation Track</li><li>Contributed to open-source FastAPI middleware library (merged PR)</li><li>Published Python tips series with 2K+ views on college blog</li></ul></section>
+<section><h2>Contact</h2><p class="summary">rahul.verma@msrit.edu · +91 65432 10987<br>https://linkedin.com/in/rahulverma-python · https://github.com/rahulverma-py</p></section>
+</body></html>

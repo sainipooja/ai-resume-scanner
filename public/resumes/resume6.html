@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vikram Singh — DevOps Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Georgia,serif;color:#4E342E;line-height:1.65;max-width:850px;margin:0 auto;padding:40px 32px;background:#FFF8EE}
+.header{text-align:center;border-bottom:3px solid #D4AF37;padding-bottom:24px;margin-bottom:28px}
+.header h1{font-size:30px;color:#4E342E;margin-bottom:4px}
+.header h2{font-size:17px;color:#6D4C41;font-weight:500;margin-bottom:14px}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:12px;color:#6D4C41}
+section{margin-bottom:24px}
+section>h2{font-size:14px;color:#D4AF37;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #F3E5D0;padding-bottom:6px;margin-bottom:14px}
+.summary{font-size:14px;text-align:justify;color:#6D4C41}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:#F3E5D0;color:#4E342E;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.item{margin-bottom:14px}
+.item h3{font-size:14px;color:#4E342E}
+.item p,.item li{font-size:13px;color:#6D4C41}
+.row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.row span{font-size:12px;color:#A1887F}
+.tech{font-size:11px;color:#D4AF37;margin-top:3px}
+.certs li{font-size:13px;list-style:none;padding:3px 0 3px 16px;position:relative;color:#6D4C41}
+.certs li::before{content:"◆";position:absolute;left:0;color:#D4AF37;font-size:8px;top:6px}
+.print-btn{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#4E342E,#6D4C41);color:#FFF8EE;border:none;padding:10px 22px;border-radius:10px;cursor:pointer;font-weight:600;z-index:100}
+@media print{.print-btn{display:none}body{padding:20px}}
+</style></head><body>
+<button class="print-btn" onclick="window.print()">Print as PDF</button>
+<div class="header"><h1>Vikram Singh</h1><h2>DevOps Engineer</h2>
+<div class="contact"><span>vikram.singh@dsce.edu.in</span><span>•</span><span>+91 43210 98765</span><span>•</span><span>Dayananda Sagar College of Engineering</span></div></div>
+<section><h2>Career Objective</h2><p class="summary">DevOps engineer targeting roles where I can automate deployments, strengthen observability, and help teams ship reliably at scale.</p></section>
+<section><h2>Education</h2><div class="item"><h3>B.E. Information Science and Engineering</h3><p>Dayananda Sagar College of Engineering, Bengaluru · 2022 – 2026 · CGPA 8.65 / 10</p></div><div class="item"><h3>Senior Secondary (PCM)</h3><p>Army Public School, Bengaluru · 2020 – 2022 · 92.8%</p></div></section>
+<section><h2>Technical Skills</h2><div class="skills"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AWS (EC2, ECS, S3, IAM, CloudWatch)</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Linux Administration</span><span class="tag">Nginx</span><span class="tag">Prometheus & Grafana</span><span class="tag">ELK Stack</span><span class="tag">Shell Scripting</span><span class="tag">Python (Automation)</span><span class="tag">Networking Basics</span><span class="tag">Helm Charts</span></div></section>
+<section><h2>Projects</h2><div class="item"><h3>GitOps Deploy Pipeline</h3><p>End-to-end CI/CD pipeline deploying containerized Node.js apps to AWS ECS with blue-green strategy and automated rollback on health check failure.</p><p class="tech">GitHub Actions, Docker, AWS ECS, Terraform</p></div><div class="item"><h3>K8s Homelab Cluster</h3><p>Three-node Raspberry Pi Kubernetes cluster running Prometheus, Grafana dashboards, and cert-manager for TLS-enabled microservices.</p><p class="tech">Kubernetes, Helm, Prometheus, Grafana</p></div><div class="item"><h3>Infra-as-Code Template</h3><p>Reusable Terraform modules for VPC, RDS, and ALB setup with remote state backend and environment-specific variable files.</p><p class="tech">Terraform, AWS, S3 Backend, Git</p></div></section>
+<section><h2>Internships</h2><div class="item"><div class="row"><h3>DevOps Intern — Elastic</h3><span>Jun 2025 – Aug 2025</span></div><p>Improved Docker build caching in CI pipelines, set up Grafana alerts for staging clusters, and documented runbooks for common deployment failures.</p></div><div class="item"><div class="row"><h3>Cloud Engineering Intern — HashedIn by Deloitte</h3><span>Dec 2024 – Feb 2025</span></div><p>Assisted in migrating on-prem Jenkins jobs to GitHub Actions and configured AWS IAM least-privilege policies for dev environments.</p></div></section>
+<section><h2>Experience</h2><div class="item"><div class="row"><h3>President — DSCE Cloud & DevOps Club</h3><span>Mar 2024 – Present</span></div><p>Hosts weekly labs on Docker, Kubernetes, and AWS; manages club GitHub org with 15+ infrastructure template repositories.</p></div></section>
+<section><h2>Certifications</h2><ul class="certs"><li>AWS Certified Solutions Architect – Associate</li><li>CKA: Certified Kubernetes Administrator (In Progress)</li><li>Linux Foundation Introduction to Kubernetes</li></ul></section>
+<section><h2>Achievements</h2><ul class="certs"><li>Built college fest registration system handling 5K concurrent users with zero downtime</li><li>Runner-up, DevOps Hackathon by Linux User Group Bengaluru 2025</li><li>Maintainer of popular DSCE docker-compose starter template (200+ stars)</li></ul></section>
+<section><h2>Contact</h2><p class="summary">vikram.singh@dsce.edu.in · +91 43210 98765<br>https://linkedin.com/in/vikramsingh-devops · https://github.com/vikramsingh-infra</p></section>
+</body></html>

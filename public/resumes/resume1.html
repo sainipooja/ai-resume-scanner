@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Priya Sharma — Frontend Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Georgia,serif;color:#4E342E;line-height:1.65;max-width:850px;margin:0 auto;padding:40px 32px;background:#FFF8EE}
+.header{text-align:center;border-bottom:3px solid #D4AF37;padding-bottom:24px;margin-bottom:28px}
+.header h1{font-size:30px;color:#4E342E;margin-bottom:4px}
+.header h2{font-size:17px;color:#6D4C41;font-weight:500;margin-bottom:14px}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:12px;color:#6D4C41}
+section{margin-bottom:24px}
+section>h2{font-size:14px;color:#D4AF37;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #F3E5D0;padding-bottom:6px;margin-bottom:14px}
+.summary{font-size:14px;text-align:justify;color:#6D4C41}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:#F3E5D0;color:#4E342E;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.item{margin-bottom:14px}
+.item h3{font-size:14px;color:#4E342E}
+.item p,.item li{font-size:13px;color:#6D4C41}
+.row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.row span{font-size:12px;color:#A1887F}
+.tech{font-size:11px;color:#D4AF37;margin-top:3px}
+.certs li{font-size:13px;list-style:none;padding:3px 0 3px 16px;position:relative;color:#6D4C41}
+.certs li::before{content:"◆";position:absolute;left:0;color:#D4AF37;font-size:8px;top:6px}
+.print-btn{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#4E342E,#6D4C41);color:#FFF8EE;border:none;padding:10px 22px;border-radius:10px;cursor:pointer;font-weight:600;z-index:100}
+@media print{.print-btn{display:none}body{padding:20px}}
+</style></head><body>
+<button class="print-btn" onclick="window.print()">Print as PDF</button>
+<div class="header"><h1>Priya Sharma</h1><h2>Frontend Developer</h2>
+<div class="contact"><span>priya.sharma@rvce.edu.in</span><span>•</span><span>+91 98765 43210</span><span>•</span><span>RV College of Engineering</span></div></div>
+<section><h2>Career Objective</h2><p class="summary">Frontend developer graduating in 2026, seeking a product engineering role where I can craft responsive, accessible web experiences and collaborate closely with design and backend teams.</p></section>
+<section><h2>Education</h2><div class="item"><h3>B.E. Computer Science and Engineering</h3><p>RV College of Engineering, Bengaluru · 2022 – 2026 · CGPA 9.12 / 10</p></div><div class="item"><h3>Higher Secondary (PCMC)</h3><p>National Public School, Bengaluru · 2020 – 2022 · 96.4%</p></div></section>
+<section><h2>Technical Skills</h2><div class="skills"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript (ES6+)</span><span class="tag">HTML5 & CSS3</span><span class="tag">Tailwind CSS</span><span class="tag">Redux Toolkit</span><span class="tag">REST APIs</span><span class="tag">Git & GitHub</span><span class="tag">Jest & React Testing Library</span><span class="tag">Webpack & Vite</span><span class="tag">Responsive & Mobile-First Design</span><span class="tag">Web Accessibility (WCAG 2.1)</span><span class="tag">Figma</span><span class="tag">Performance Optimization</span></div></section>
+<section><h2>Projects</h2><div class="item"><h3>CampusConnect Portal</h3><p>Built a student community portal with real-time event feeds, club dashboards, and dark-mode theming used by 800+ students on campus.</p><p class="tech">React, Vite, Firebase, Tailwind CSS</p></div><div class="item"><h3>ShopSwift UI Kit</h3><p>Designed and coded a reusable e-commerce component library with cart flows, product filters, and skeleton loading states.</p><p class="tech">React, Storybook, TypeScript, CSS Modules</p></div><div class="item"><h3>A11y Audit Tool</h3><p>Chrome extension that scans pages for contrast issues, missing alt text, and keyboard trap violations with actionable fix suggestions.</p><p class="tech">JavaScript, Chrome APIs, Axe-core</p></div></section>
+<section><h2>Internships</h2><div class="item"><div class="row"><h3>Frontend Engineering Intern — Freshworks</h3><span>May 2025 – Jul 2025</span></div><p>Implemented reusable React components for an internal admin dashboard, improved Lighthouse performance score from 68 to 91, and paired with UX on design-system tokens.</p></div><div class="item"><div class="row"><h3>UI Engineering Intern — Razorpay</h3><span>Dec 2024 – Feb 2025</span></div><p>Contributed to payment checkout micro-interactions, fixed cross-browser layout bugs, and wrote unit tests for form validation flows.</p></div></section>
+<section><h2>Experience</h2><div class="item"><div class="row"><h3>Technical Lead — RVCE Web Dev Club</h3><span>Aug 2024 – Present</span></div><p>Led a team of 12 students building workshop websites and mentoring juniors on React fundamentals, Git workflows, and code review practices.</p></div></section>
+<section><h2>Certifications</h2><ul class="certs"><li>Meta Front-End Developer Professional Certificate</li><li>Google UX Design Professional Certificate</li><li>freeCodeCamp Responsive Web Design</li></ul></section>
+<section><h2>Achievements</h2><ul class="certs"><li>Winner, Smart India Hackathon 2025 – Software Edition (Team Lead)</li><li>1st Place, RVCE Intra-College UI/UX Challenge 2024</li><li>Published article on CSS container queries in college tech magazine</li></ul></section>
+<section><h2>Contact</h2><p class="summary">priya.sharma@rvce.edu.in · +91 98765 43210<br>https://linkedin.com/in/priyasharma-frontend · https://github.com/priyasharma-ui</p></section>
+</body></html>
