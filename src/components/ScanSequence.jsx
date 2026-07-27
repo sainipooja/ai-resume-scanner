@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiOutlineCheckCircle } from 'react-icons/hi'
 import { SITE } from '../config/site'
@@ -9,10 +10,25 @@ export default function ScanSequence({ onComplete }) {
   const [stepIndex, setStepIndex] = useState(0)
   const [progress, setProgress] = useState(0)
   const [done, setDone] = useState(false)
+  const [scannerSize, setScannerSize] = useState(220)
 
   const steps = SITE.scanSteps
   const totalMs = 4000
   const stepMs = totalMs / steps.length
+
+  useEffect(() => {
+    const updateSize = () => setScannerSize(window.innerWidth < 640 ? 200 : 240)
+    updateSize()
+    window.addEventListener('resize', updateSize)
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [])
 
   useEffect(() => {
     const progressInterval = setInterval(() => {
@@ -43,36 +59,40 @@ export default function ScanSequence({ onComplete }) {
     }
   }, [onComplete, stepMs, steps.length, totalMs])
 
-  return (
+  return createPortal(
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center"
+      className="fixed inset-0 z-[200] flex min-h-[100dvh] w-full items-center justify-center overflow-hidden"
+      style={{
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+      }}
     >
       <ParticleBackground active />
 
-      <div className="relative z-10 flex flex-col items-center px-6">
-        <FuturisticScanner active size={280} />
+      <div className="relative z-10 flex w-full max-w-md flex-col items-center justify-center px-6 py-10">
+        <FuturisticScanner active size={scannerSize} />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-12 w-full max-w-md text-center"
+          transition={{ delay: 0.2 }}
+          className="mt-8 w-full text-center sm:mt-10"
         >
           <AnimatePresence mode="wait">
             <motion.p
               key={stepIndex}
-              initial={{ opacity: 0, y: 10, filter: 'blur(4px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, y: -10, filter: 'blur(4px)' }}
-              transition={{ duration: 0.3 }}
-              className="font-display mb-6 text-2xl font-semibold text-[#4E342E]"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25 }}
+              className="font-display mb-5 min-h-[2.5rem] text-xl font-semibold text-[#4E342E] sm:mb-6 sm:min-h-[2.75rem] sm:text-2xl"
             >
               {done ? (
                 <span className="flex items-center justify-center gap-2 text-[#D4AF37]">
-                  <HiOutlineCheckCircle className="h-7 w-7" />
+                  <HiOutlineCheckCircle className="h-6 w-6 sm:h-7 sm:w-7" />
                   {steps[steps.length - 1]}
                 </span>
               ) : (
@@ -95,6 +115,7 @@ export default function ScanSequence({ onComplete }) {
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.div>,
+    document.body
   )
 }

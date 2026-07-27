@@ -37,7 +37,7 @@ export default function Landing() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, filter: 'blur(10px)' }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-12"
+          className="relative z-10 flex min-h-[100dvh] flex-col items-center justify-center px-6 py-12"
         >
           <motion.div
             initial={{ opacity: 0, y: -30 }}
