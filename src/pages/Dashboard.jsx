@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { candidates } from '../data/candidates'
 import CandidateCard from '../components/CandidateCard'
 import ParticleBackground from '../components/ParticleBackground'
+import { BackToHome } from '../components/BackNav'
 import { SITE } from '../config/site'
 
 export default function Dashboard() {
@@ -10,6 +11,9 @@ export default function Dashboard() {
       <ParticleBackground />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <BackToHome />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

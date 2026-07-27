@@ -1,9 +1,10 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { HiOutlineArrowLeft, HiOutlineDownload, HiOutlinePrinter } from 'react-icons/hi'
+import { HiOutlineDownload, HiOutlinePrinter } from 'react-icons/hi'
 import { FaLinkedin, FaGithub, FaGlobe } from 'react-icons/fa'
 import { getCandidateById } from '../data/candidates'
 import ParticleBackground from '../components/ParticleBackground'
+import { BackToHome, BackToDashboard } from '../components/BackNav'
 
 function Section({ title, children, delay = 0 }) {
   return (
@@ -51,13 +52,10 @@ export default function Candidate() {
           animate={{ opacity: 1, x: 0 }}
           className="mb-8 flex flex-wrap items-center justify-between gap-4"
         >
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center gap-2 rounded-xl border border-[#4E342E]/15 bg-[#FFF8EE]/80 px-4 py-2.5 text-sm font-semibold text-[#4E342E] backdrop-blur-sm hover:bg-[#F3E5D0]"
-          >
-            <HiOutlineArrowLeft className="h-4 w-4" />
-            Back to Candidates
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <BackToHome />
+            <BackToDashboard />
+          </div>
           <div className="flex gap-2">
             <motion.button whileTap={{ scale: 0.95 }} onClick={handleDownload} className="btn-chocolate inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">
               <HiOutlineDownload className="h-4 w-4" /> Download CV

@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Landing from './pages/Landing'
 import Dashboard from './pages/Dashboard'
 import Candidate from './pages/Candidate'
-import QRPoster from './pages/QRPoster'
 import ScanGate from './components/ScanGate'
 import { SCAN_KEY } from './config/site'
 
@@ -20,7 +19,6 @@ function AnimatedRoutes() {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <Routes location={location}>
-          <Route path="/poster" element={<QRPoster />} />
           <Route
             path="/"
             element={
