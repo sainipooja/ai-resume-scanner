@@ -43,7 +43,7 @@ export default function Landing() {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-8 text-center"
+            className="mb-10 text-center"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -62,37 +62,48 @@ export default function Landing() {
             </p>
           </motion.div>
 
-          <div className="flex w-full max-w-4xl flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-14">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden shrink-0 lg:block"
-            >
-              <FuturisticScanner active={false} size={260} />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="glass-luxury w-full max-w-3xl overflow-hidden rounded-3xl border border-[#4E342E]/8 p-6 shadow-xl sm:p-8"
+          >
+            <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-0">
+              {/* AI Scanner — vertically centred with QR panel */}
+              <div className="flex w-full shrink-0 flex-col items-center justify-center lg:w-[240px]">
+                <FuturisticScanner active={false} size={220} />
+                <p className="mt-3 text-[10px] font-bold tracking-[0.35em] text-[#D4AF37] uppercase">
+                  AI Powered
+                </p>
+              </div>
 
-            <div className="flex w-full max-w-sm flex-col items-center gap-6">
-              <EventQRCard />
+              {/* Divider */}
+              <div className="hidden w-px shrink-0 self-stretch bg-gradient-to-b from-transparent via-[#D4AF37]/25 to-transparent lg:mx-8 lg:block" />
 
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.55 }}
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setScanning(true)}
-                className="btn-chocolate relative w-full overflow-hidden rounded-2xl px-10 py-4 text-sm font-semibold tracking-wide shadow-2xl"
-              >
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  animate={{ x: ['-100%', '200%'] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-                />
-                {SITE.previewButton}
-              </motion.button>
+              {/* Mobile divider */}
+              <div className="h-px w-full max-w-xs bg-gradient-to-r from-transparent via-[#D4AF37]/25 to-transparent lg:hidden" />
+
+              {/* QR Scanner */}
+              <EventQRCard embedded />
             </div>
-          </div>
+          </motion.div>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setScanning(true)}
+            className="btn-chocolate relative mt-8 w-full max-w-3xl overflow-hidden rounded-2xl px-10 py-4 text-sm font-semibold tracking-wide shadow-2xl"
+          >
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+              animate={{ x: ['-100%', '200%'] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+            />
+            {SITE.previewButton}
+          </motion.button>
         </motion.div>
       )}
     </>

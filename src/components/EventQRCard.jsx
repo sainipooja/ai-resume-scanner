@@ -9,28 +9,24 @@ const steps = [
   { num: '03', text: SITE.qr.step3 },
 ]
 
-export default function EventQRCard() {
+export default function EventQRCard({ embedded = false }) {
   const scanUrl =
     typeof window !== 'undefined' ? `${window.location.origin}/?scan=1` : QR_SCAN_URL
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-      className="glass-luxury w-full max-w-sm overflow-hidden rounded-3xl border border-[#4E342E]/8 p-6 shadow-xl"
-    >
-      <div className="mb-5 text-center">
-        <p className="mb-1 text-[10px] font-bold tracking-[0.3em] text-[#D4AF37] uppercase">
-          {SITE.qr.eyebrow}
-        </p>
+  const content = (
+    <>
+      <div className={embedded ? 'mb-4 text-center lg:text-left' : 'mb-5 text-center'}>
+        {!embedded && (
+          <p className="mb-1 text-[10px] font-bold tracking-[0.3em] text-[#D4AF37] uppercase">
+            {SITE.qr.eyebrow}
+          </p>
+        )}
         <h2 className="font-display text-xl font-bold text-[#4E342E]">{SITE.qr.title}</h2>
         <p className="mt-2 text-sm leading-relaxed text-[#6D4C41]/75">{SITE.qr.subtitle}</p>
       </div>
 
-      {/* Scanner frame with live QR code */}
-      <div className="relative mx-auto mb-5 flex justify-center">
-        <div className="relative" style={{ width: 220, height: 220 }}>
+      <div className="relative mx-auto mb-4 flex justify-center lg:mx-0 lg:justify-start">
+        <div className="relative" style={{ width: 200, height: 200 }}>
           <motion.div
             animate={{ opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -43,7 +39,7 @@ export default function EventQRCard() {
             'bottom-0 left-0 border-b-2 border-l-2',
             'bottom-0 right-0 border-b-2 border-r-2',
           ].map((cls) => (
-            <div key={cls} className={`absolute h-7 w-7 border-[#D4AF37]/70 ${cls}`} />
+            <div key={cls} className={`absolute h-6 w-6 border-[#D4AF37]/70 ${cls}`} />
           ))}
 
           <motion.div
@@ -52,10 +48,10 @@ export default function EventQRCard() {
             className="pointer-events-none absolute right-3 left-3 z-10 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent shadow-[0_0_12px_#D4AF37]"
           />
 
-          <div className="absolute inset-3 flex items-center justify-center rounded-xl border border-[#4E342E]/10 bg-white p-3 shadow-inner">
+          <div className="absolute inset-3 flex items-center justify-center rounded-xl border border-[#4E342E]/10 bg-white p-2.5 shadow-inner">
             <QRCodeSVG
               value={scanUrl}
-              size={160}
+              size={148}
               level="H"
               includeMargin={false}
               bgColor="#FFFFFF"
@@ -65,12 +61,14 @@ export default function EventQRCard() {
         </div>
       </div>
 
-      <div className="mb-4 flex items-center justify-center gap-2 text-sm font-medium text-[#4E342E]">
-        <HiOutlineDeviceMobile className="h-4 w-4 text-[#D4AF37]" />
+      <div
+        className={`mb-4 flex items-center gap-2 text-sm font-medium text-[#4E342E] ${embedded ? 'justify-center lg:justify-start' : 'justify-center'}`}
+      >
+        <HiOutlineDeviceMobile className="h-4 w-4 shrink-0 text-[#D4AF37]" />
         {SITE.qr.scanLabel}
       </div>
 
-      <div className="mb-5 space-y-2">
+      <div className="mb-4 space-y-2">
         {steps.map((s) => (
           <div
             key={s.num}
@@ -90,6 +88,21 @@ export default function EventQRCard() {
         <HiOutlinePrinter className="h-4 w-4 text-[#D4AF37]" />
         {SITE.qr.printButton}
       </button>
+    </>
+  )
+
+  if (embedded) {
+    return <div className="w-full min-w-0 flex-1">{content}</div>
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      className="glass-luxury w-full max-w-sm overflow-hidden rounded-3xl border border-[#4E342E]/8 p-6 shadow-xl"
+    >
+      {content}
     </motion.div>
   )
 }
