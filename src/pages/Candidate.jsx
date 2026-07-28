@@ -1,7 +1,6 @@
 import { useParams, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { HiOutlineDownload, HiOutlinePrinter } from 'react-icons/hi'
-import { FaLinkedin, FaGithub, FaGlobe } from 'react-icons/fa'
+import { HiOutlineDownload, HiOutlinePrinter, HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi'
 import { getCandidateById } from '../data/candidates'
 import ParticleBackground from '../components/ParticleBackground'
 import { BackToHome, BackToDashboard } from '../components/BackNav'
@@ -46,7 +45,7 @@ export default function Candidate() {
   return (
     <div className="relative min-h-screen">
       <ParticleBackground />
-      <div className="relative z-10 mx-auto max-w-4xl px-4 py-12 sm:px-6">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -76,106 +75,69 @@ export default function Candidate() {
 
           <div className="p-8 sm:p-10">
             <div className="mb-10 flex flex-col items-center border-b border-[#D4AF37]/20 pb-10 sm:flex-row sm:items-start sm:gap-8">
-              <img src={candidate.image} alt={candidate.name} className="mb-6 h-40 w-40 rounded-2xl border-4 border-[#FFF8EE] object-cover shadow-xl sm:mb-0" />
+              <img src={candidate.image} alt={candidate.name} className="mb-6 h-36 w-36 rounded-2xl border-4 border-[#FFF8EE] object-cover shadow-xl sm:mb-0" />
               <div className="text-center sm:text-left">
-                <p className="mb-2 text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Candidate Profile</p>
-                <h1 className="font-display text-4xl font-bold text-[#4E342E]">{candidate.name}</h1>
-                <p className="mt-1 text-xl font-semibold text-[#D4AF37]">{candidate.role}</p>
-                <p className="mt-2 text-[#6D4C41]/70">{candidate.college} · {candidate.department} · Class of {candidate.graduationYear}</p>
-                <div className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start">
-                  {[
-                    { icon: FaLinkedin, href: candidate.linkedin, label: 'LinkedIn' },
-                    { icon: FaGithub, href: candidate.github, label: 'GitHub' },
-                    { icon: FaGlobe, href: candidate.portfolio, label: 'Portfolio' },
-                  ].map(({ icon: Icon, href, label }) => (
-                    <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-[#FFF8EE] px-3 py-1.5 text-xs font-medium text-[#6D4C41] hover:text-[#D4AF37]">
-                      <Icon className="h-3.5 w-3.5" /> {label}
-                    </a>
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-[#6D4C41]/70">{candidate.email} · {candidate.phone}</p>
+                <h1 className="font-display text-3xl font-bold text-[#4E342E] sm:text-4xl">{candidate.name}</h1>
+                <p className="mt-1 text-lg font-semibold text-[#D4AF37]">{candidate.role}</p>
+                <p className="mt-2 text-sm text-[#6D4C41]/70">{candidate.college} · {candidate.department}</p>
+                <p className="text-sm text-[#6D4C41]/70">Class of {candidate.graduationYear}</p>
               </div>
             </div>
 
-            <Section title="Professional Summary" delay={0.1}>
-              <p className="leading-relaxed text-[#6D4C41]">{candidate.objective}</p>
+            <Section title="Contact Details" delay={0.1}>
+              <div className="space-y-3 text-sm text-[#6D4C41]">
+                <p className="flex items-start gap-3">
+                  <HiOutlineMail className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]" />
+                  {candidate.email}
+                </p>
+                <p className="flex items-start gap-3">
+                  <HiOutlinePhone className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]" />
+                  {candidate.phone}
+                </p>
+                <p className="flex items-start gap-3">
+                  <HiOutlineLocationMarker className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]" />
+                  {candidate.address}
+                </p>
+              </div>
             </Section>
 
-            <Section title="Academic Background" delay={0.15}>
-              {candidate.education.map((e) => (
-                <div key={e.degree} className="mb-4">
-                  <h3 className="font-semibold text-[#4E342E]">{e.degree}</h3>
-                  <p className="text-sm text-[#6D4C41]/70">{e.institution} · {e.year} · {e.score}</p>
-                </div>
-              ))}
+            <Section title="Educational Qualification" delay={0.15}>
+              <div className="overflow-x-auto rounded-xl border border-[#4E342E]/10">
+                <table className="w-full min-w-[480px] text-left text-sm">
+                  <thead className="bg-[#FFF8EE] text-xs uppercase tracking-wide text-[#6D4C41]/70">
+                    <tr>
+                      <th className="px-4 py-3 font-semibold">Year</th>
+                      <th className="px-4 py-3 font-semibold">Course</th>
+                      <th className="px-4 py-3 font-semibold">Institution</th>
+                      <th className="px-4 py-3 font-semibold">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-[#6D4C41]">
+                    {candidate.education.map((e) => (
+                      <tr key={e.degree} className="border-t border-[#4E342E]/8">
+                        <td className="px-4 py-3">{e.year}</td>
+                        <td className="px-4 py-3 font-medium text-[#4E342E]">{e.degree}</td>
+                        <td className="px-4 py-3">{e.institution}</td>
+                        <td className="px-4 py-3">{e.score}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </Section>
 
-            <Section title="Core Competencies" delay={0.2}>
+            <Section title="Technical Skills" delay={0.2}>
               <div className="flex flex-wrap gap-2">
-                {candidate.technicalSkills.map((s) => (
+                {candidate.skills.map((s) => (
                   <span key={s} className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs font-medium text-[#4E342E]">{s}</span>
                 ))}
               </div>
             </Section>
 
-            <Section title="Key Projects" delay={0.25}>
-              {candidate.projects.map((p) => (
-                <div key={p.name} className="mb-4">
-                  <h3 className="font-semibold text-[#4E342E]">{p.name}</h3>
-                  <p className="text-sm text-[#6D4C41]">{p.desc}</p>
-                  <p className="text-xs text-[#D4AF37]">Tech: {p.tech}</p>
-                </div>
-              ))}
-            </Section>
-
-            <Section title="Industry Experience" delay={0.3}>
-              {candidate.internships.map((i) => (
-                <div key={i.company} className="mb-4">
-                  <div className="flex flex-wrap justify-between gap-2">
-                    <h3 className="font-semibold text-[#4E342E]">{i.role} — {i.company}</h3>
-                    <span className="text-sm text-[#6D4C41]/50">{i.period}</span>
-                  </div>
-                  <p className="text-sm text-[#6D4C41]">{i.desc}</p>
-                </div>
-              ))}
-            </Section>
-
-            <Section title="Leadership & Activities" delay={0.32}>
-              {candidate.experience.map((e) => (
-                <div key={e.company} className="mb-4">
-                  <div className="flex flex-wrap justify-between gap-2">
-                    <h3 className="font-semibold text-[#4E342E]">{e.role} — {e.company}</h3>
-                    <span className="text-sm text-[#6D4C41]/50">{e.period}</span>
-                  </div>
-                  <p className="text-sm text-[#6D4C41]">{e.desc}</p>
-                </div>
-              ))}
-            </Section>
-
-            <Section title="Professional Certifications" delay={0.35}>
-              <ul className="space-y-2">
-                {candidate.certifications.map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-sm text-[#6D4C41]">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4AF37]" />{c}
-                  </li>
-                ))}
-              </ul>
-            </Section>
-
-            <Section title="Notable Achievements" delay={0.38}>
-              <ul className="space-y-2">
-                {candidate.achievements.map((a) => (
-                  <li key={a} className="flex items-start gap-2 text-sm text-[#6D4C41]">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4E342E]" />{a}
-                  </li>
-                ))}
-              </ul>
-            </Section>
-
-            <Section title="Language Proficiency" delay={0.4}>
+            <Section title="Languages Known" delay={0.25}>
               <div className="flex flex-wrap gap-3">
                 {candidate.languages.map((l) => (
-                  <span key={l} className="text-sm text-[#6D4C41]">{l}</span>
+                  <span key={l} className="rounded-lg bg-[#FFF8EE] px-3 py-1.5 text-sm text-[#6D4C41]">{l}</span>
                 ))}
               </div>
             </Section>

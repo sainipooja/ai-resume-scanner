@@ -1,39 +1,137 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rohan Desai — Full Stack Developer</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Georgia,serif;color:#4E342E;line-height:1.65;max-width:850px;margin:0 auto;padding:40px 32px;background:#FFF8EE}
-.header{text-align:center;border-bottom:3px solid #D4AF37;padding-bottom:24px;margin-bottom:28px}
-.header h1{font-size:30px;color:#4E342E;margin-bottom:4px}
-.header h2{font-size:17px;color:#6D4C41;font-weight:500;margin-bottom:14px}
-.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:12px;color:#6D4C41}
-section{margin-bottom:24px}
-section>h2{font-size:14px;color:#D4AF37;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #F3E5D0;padding-bottom:6px;margin-bottom:14px}
-.summary{font-size:14px;text-align:justify;color:#6D4C41}
-.skills{display:flex;flex-wrap:wrap;gap:8px}
-.tag{background:#F3E5D0;color:#4E342E;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
-.item{margin-bottom:14px}
-.item h3{font-size:14px;color:#4E342E}
-.item p,.item li{font-size:13px;color:#6D4C41}
-.row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
-.row span{font-size:12px;color:#A1887F}
-.tech{font-size:11px;color:#D4AF37;margin-top:3px}
-.certs li{font-size:13px;list-style:none;padding:3px 0 3px 16px;position:relative;color:#6D4C41}
-.certs li::before{content:"◆";position:absolute;left:0;color:#D4AF37;font-size:8px;top:6px}
-.print-btn{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#4E342E,#6D4C41);color:#FFF8EE;border:none;padding:10px 22px;border-radius:10px;cursor:pointer;font-weight:600;z-index:100}
-@media print{.print-btn{display:none}body{padding:20px}}
-</style></head><body>
-<button class="print-btn" onclick="window.print()">Print as PDF</button>
-<div class="header"><h1>Rohan Desai</h1><h2>Full Stack Developer</h2>
-<div class="contact"><span>f2022cs@pilani.bits-pilani.ac.in</span><span>•</span><span>+91 99887 76655</span><span>•</span><span>BITS Pilani</span></div></div>
-<section><h2>Career Objective</h2><p class="summary">Full stack developer aiming to build user-centric web applications with modern JavaScript stacks, scalable APIs, and thoughtful UX across the entire stack.</p></section>
-<section><h2>Education</h2><div class="item"><h3>B.E. (Hons.) Computer Science</h3><p>BITS Pilani, Pilani Campus · 2022 – 2026 · CGPA 8.91 / 10</p></div><div class="item"><h3>Senior Secondary (Science)</h3><p>Cathedral and John Connon School, Mumbai · 2020 – 2022 · 95.4%</p></div></section>
-<section><h2>Technical Skills</h2><div class="skills"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">GraphQL & Apollo</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Docker</span><span class="tag">AWS (Basics)</span><span class="tag">Socket.io</span><span class="tag">JWT Authentication</span><span class="tag">Git & GitHub</span><span class="tag">CI/CD (GitHub Actions)</span></div></section>
-<section><h2>Projects</h2><div class="item"><h3>CollabBoard</h3><p>Real-time collaborative whiteboard with live cursors, shape tools, and persistent boards using WebSockets and MongoDB.</p><p class="tech">React, Node.js, Socket.io, MongoDB</p></div><div class="item"><h3>TaskFlow SaaS</h3><p>Full stack project management app with Kanban boards, team invites, GraphQL API, and Stripe subscription integration.</p><p class="tech">Next.js, GraphQL, PostgreSQL, Stripe</p></div><div class="item"><h3>DevPortfolio Generator</h3><p>SaaS tool that converts JSON resume data into themed portfolio sites with one-click deploy to Vercel.</p><p class="tech">React, Node.js, Tailwind CSS, Vercel API</p></div></section>
-<section><h2>Internships</h2><div class="item"><div class="row"><h3>Software Engineering Intern — Microsoft</h3><span>May 2025 – Jul 2025</span></div><p>Shipped features on an internal React dashboard, built REST endpoints in Node.js, and improved page load time by 35% through code splitting.</p></div><div class="item"><div class="row"><h3>Full Stack Intern — CRED</h3><span>Dec 2024 – Feb 2025</span></div><p>Developed admin tooling for reward campaigns, integrated MongoDB aggregations for analytics views, and wrote E2E tests for critical flows.</p></div></section>
-<section><h2>Experience</h2><div class="item"><div class="row"><h3>Technical Secretary — BITS ACM Student Chapter</h3><span>Jan 2024 – Present</span></div><p>Organizes hackathons and full stack workshops; maintains chapter website and open-source project templates for 500+ members.</p></div></section>
-<section><h2>Certifications</h2><ul class="certs"><li>Meta Full Stack Developer Professional Certificate</li><li>MongoDB Node.js Developer Path</li><li>freeCodeCamp Full Stack Certification</li></ul></section>
-<section><h2>Achievements</h2><ul class="certs"><li>Winner, BITS Quark Hackathon 2025 – Full Stack Track</li><li>Google Developer Student Clubs Lead, Pilani Campus</li><li>Open-source contributor to popular React component library (3 merged PRs)</li></ul></section>
-<section><h2>Contact</h2><p class="summary">f2022cs@pilani.bits-pilani.ac.in · +91 99887 76655<br>https://linkedin.com/in/rohandesai-fullstack · https://github.com/rohandesai-stack</p></section>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rohan Desai — Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      color: #000;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 36px 40px;
+      background: #fff;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .contact {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    section { margin-bottom: 18px; }
+    section h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f5f5f5; font-weight: bold; }
+    ul {
+      padding-left: 22px;
+      font-size: 13px;
+    }
+    li { margin-bottom: 4px; }
+    .print-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+    }
+    @media print {
+      .print-btn { display: none; }
+      body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print as PDF</button>
+
+  <h1>Rohan Desai</h1>
+  <p class="subtitle">Full Stack Developer</p>
+
+  <div class="contact">
+    <strong>Email:</strong> rohan.desai@pilani.bits-pilani.ac.in<br>
+    <strong>Phone:</strong> +91 99887 76655<br>
+    <strong>Address:</strong> Pilani, Jhunjhunu, Rajasthan – 333031
+  </div>
+
+  <section>
+    <h2>Educational Qualification</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Course / Degree</th>
+          <th>Institution</th>
+          <th>Percentage / CGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr>
+      <td>2022 – 2026</td>
+      <td>B.E. (Hons.) Computer Science</td>
+      <td>BITS Pilani, Pilani Campus</td>
+      <td>CGPA 8.91 / 10</td>
+    </tr>
+    <tr>
+      <td>2020 – 2022</td>
+      <td>PUC (Science)</td>
+      <td>Cathedral and John Connon School, Mumbai</td>
+      <td>95.4%</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>SSLC</td>
+      <td>Cathedral and John Connon School, Mumbai</td>
+      <td>94%</td>
+    </tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>MongoDB</li></ul>
+  </section>
+
+  <section>
+    <h2>Languages Known</h2>
+    <ul><li>English</li><li>Hindi</li><li>Marathi</li><li>Gujarati</li></ul>
+  </section>
+</body>
+</html>
